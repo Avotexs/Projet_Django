@@ -71,12 +71,14 @@
                      <li><a href="{% url 'Dreamtravelabout' %}">About</a></li>
                     {% if user.is_authenticated %}
                       <li><a href="{% url 'user-logout'%}">logout</a></li>
-                      <li class="menu-has-children"><a href="{% url 'page' %}">Profile</a>
+                      
                     {% else %}
+
                       <li><a href="{% url 'Dreamtravelregister' %}">Registre</a></li>
                       <li><a href="{% url 'Dreamtravellogin' %}">Login</a></li>
                       
                     {% endif %}
+                    <li class="menu-has-children"><a href="{% url 'events' %}">Events</a>
 
                       <li class="menu-has-children"><a href="http://localhost:3000/">ChatbotGemini</a>
                       </li>					          					          		          

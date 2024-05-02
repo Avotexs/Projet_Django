@@ -3,6 +3,8 @@ from .formes import CreateUserForm, LoginForm
 from  django.contrib.auth.models import auth
 from  django.contrib.auth import authenticate, login, logout
 
+from .models import VoyageEvent
+
 Dashbord = [{
     'name' : "Dashboard",  
     'title':'metat', 
@@ -63,6 +65,9 @@ def  user_logout(request):
     auth.logout(request)
     return redirect("Dreamtravellogin")
 
-def page(request):
-    # Logique pour gérer les actions de l'utilisateur (ajouter une photo, modifier les paramètres, etc.)
-    return render(request, 'Dashbord/page.html', {'title': 'Page'})
+
+
+
+def events_page(request):
+    events = VoyageEvent.objects.all()
+    return render(request, 'Dashbord/events.html', {'events': events})

@@ -74,9 +74,9 @@
                     {% else %}
                       <li><a href="{% url 'Dreamtravelregister' %}">Registre</a></li>
                       <li><a href="{% url 'Dreamtravellogin' %}">Login</a></li>
-                      <li class="menu-has-children"><a href="{% url 'page' %}">Profile</a>
+                      
                     {% endif %}
-
+                      <li class="menu-has-children"><a href="{% url 'events' %}">Events</a>
                       <li class="menu-has-children"><a href="http://localhost:3000/">ChatbotGemini</a>
                       </li>					          					          		          
                       <li><a href="https://m.me/312187555302646?ref=w24439850">Chatbotmessanger</a></li>
@@ -85,7 +85,27 @@
                 </div>
             </div>
         </header><!-- #header -->
-        
+        <style>
+            /* CSS for styling the events */
+            .event-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the width of the squares */
+                gap: 20px; /* Adjust the gap between squares */
+                padding: 20px;
+            }
+    
+            .event {
+                background-color: #f0f0f0; /* Background color of the squares */
+                padding: 20px;
+                border-radius: 10px; /* Rounded corners for squares */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for squares */
+            }
+    
+            .event img {
+                max-width: 100%; /* Ensure images fit within their parent squares */
+                border-radius: 5px; /* Rounded corners for images */
+            }
+        </style>
         <!-- start banner Area -->
         <section class="banner-area relative">
             <div class="overlay overlay-bg"></div>				
@@ -103,20 +123,21 @@
             </div>					
         </section>
         <!-- End banner Area -->
-<body>
-    <h1>Page</h1>
-    <!-- Formulaire pour ajouter une photo -->
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="photo">
-        <input type="submit" value="Ajouter la photo">
-    </form>
 
-    <!-- Formulaire pour modifier les paramètres -->
-    <form method="POST">
-        {% csrf_token %}
-        <!-- Ajoutez ici les champs pour modifier les paramètres -->
-        <input type="submit" value="Enregistrer les paramètres">
-    </form>
+<body>
+
+    <h1>Travel Events</h1>
+    <div class="event-container">
+        {% for event in events %}
+            <div class="event">
+                <h2>{{ event.title }}</h2>
+                <p>{{ event.description }}</p>
+                <p>Date: {{ event.date }}</p>
+                <p>Location: {{ event.location }}</p>
+                <img src="{{ event.image.url }}" alt="{{ event.title }}">
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
+

@@ -74,9 +74,9 @@
                     {% else %}
                       <li><a href="{% url 'Dreamtravelregister' %}">Registre</a></li>
                       <li><a href="{% url 'Dreamtravellogin' %}">Login</a></li>
-                      <li class="menu-has-children"><a href="{% url 'page' %}">Profile</a>
+                      
                     {% endif %}
-
+                     <li class="menu-has-children"><a href="{% url 'events' %}">Events</a>
                       <li class="menu-has-children"><a href="http://localhost:3000/">ChatbotGemini</a>
                       </li>					          					          		          
                       <li><a href="https://m.me/312187555302646?ref=w24439850">Chatbotmessanger</a></li>
@@ -97,7 +97,7 @@
                         <p class="text-white">
                             Welcome to our web panel dedicated to the captivating city of Marrakech. Embark on a journey with us as we unveil the enchanting allure of this historic gem.
                         </p>
-                        <a href="#" class="primary-btn text-uppercase">Get Started</a>
+                        <a href="{% url 'Dreamtravelregister' %}" class="primary-btn text-uppercase">Get Started</a>
                     </div>
                     
                 </div>
@@ -162,115 +162,7 @@
         <!-- End popular-destination Area -->
         
 
-        <!-- Start price Area -->
-        <section class="price-area section-gap">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="menu-content pb-70 col-lg-8">
-                        <div class="title text-center">
-                            <h1 class="mb-10">We Provide Affordable Prices</h1>
-                            <p>Well educated, intellectual people, especially scientists at all times demonstrate considerably.</p>
-                        </div>
-                    </div>
-                </div>						
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="single-price">
-                            <h4>Cheap Packages</h4>
-                            <ul class="price-list">
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>New York</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Maldives</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Sri Lanka</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Nepal</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Thiland</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>	
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Singapore</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>														
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="single-price">
-                            <h4>Luxury Packages</h4>
-                            <ul class="price-list">
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>New York</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Maldives</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Sri Lanka</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Nepal</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Thiland</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>	
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Singapore</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>														
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="single-price">
-                            <h4>Camping Packages</h4>
-                            <ul class="price-list">
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>New York</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Maldives</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Sri Lanka</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Nepal</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Thiland</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>	
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <span>Singapore</span>
-                                    <a href="#" class="price-btn">$1500</a>
-                                </li>														
-                            </ul>
-                        </div>
-                    </div>												
-                </div>
-            </div>	
-        </section>
-        <!-- End price Area -->
+       
         
 
         <!-- Start other-issue Area -->
@@ -290,7 +182,7 @@
                             <div class="thumb">
                                 <img class="img-fluid" src="{% static 'img/o1.jpg' %}" alt="">					
                             </div>
-                            <a href="#">
+                            <a href="http://localhost:3000/">
                                 <h4>Rent a Car</h4>
                             </a>
                             <p>
@@ -303,7 +195,7 @@
                             <div class="thumb">
                                 <img class="img-fluid" src="{% static 'img/o2.jpg' %}" alt="">					
                             </div>
-                            <a href="#">
+                            <a href="http://localhost:3000/">
                                 <h4>Cruise Booking</h4>
                             </a>
                             <p>
@@ -316,7 +208,7 @@
                             <div class="thumb">
                                 <img class="img-fluid" src="{% static 'img/o3.jpg' %}" alt="">					
                             </div>
-                            <a href="#">
+                            <a href="http://localhost:3000/">
                                 <h4>To Do List</h4>
                             </a>
                             <p>
@@ -329,7 +221,7 @@
                             <div class="thumb">
                                 <img class="img-fluid" src="{% static 'img/o4.jpg' %}" alt="">					
                             </div>
-                            <a href="#">
+                            <a href="http://localhost:3000/">
                                 <h4>Food Features</h4>
                             </a>
                             <p>
@@ -343,133 +235,7 @@
         <!-- End other-issue Area -->
         
 
-        <!-- Start testimonial Area -->
-        <section class="testimonial-area section-gap">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="menu-content pb-70 col-lg-8">
-                        <div class="title text-center">
-                            <h1 class="mb-10">Testimonial from our Clients</h1>
-                            <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="active-testimonial">
-                        <div class="single-testimonial item d-flex flex-row">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{% static 'img/elements/user1.png' %}" alt="">					
-                            </div>
-                            <div class="desc">
-                                <p>
-                                    Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills, the bigger the payoff you.		     
-                                </p>
-                                <h4>Harriet Maxwell</h4>
-                                <div class="star">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>				
-                                </div>	
-                            </div>
-                        </div>
-                        <div class="single-testimonial item d-flex flex-row">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{% static 'img/elements/user2.png' %}" alt="">					
-                            </div>
-                            <div class="desc">
-                                <p>
-                                    A purpose is the eternal condition for success. Every former smoker can tell you just how hard it is to stop smoking cigarettes. However.
-                                </p>
-                                <h4>Carolyn Craig</h4>
-                                   <div class="star">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>			
-                                </div>	
-                            </div>
-                        </div>
-                        <div class="single-testimonial item d-flex flex-row">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{% static 'img/elements/user1.png' %}" alt="">					
-                            </div>
-                            <div class="desc">
-                                <p>
-                                    Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills, the bigger the payoff you.		     
-                                </p>
-                                <h4>Harriet Maxwell</h4>
-                                <div class="star">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>				
-                                </div>	
-                            </div>
-                        </div>
-                        <div class="single-testimonial item d-flex flex-row">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{% static 'img/elements/user2.png' %}" alt="">					
-                            </div>
-                            <div class="desc">
-                                <p>
-                                    A purpose is the eternal condition for success. Every former smoker can tell you just how hard it is to stop smoking cigarettes. However.
-                                </p>
-                                <h4>Carolyn Craig</h4>
-                                   <div class="star">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>			
-                                </div>	
-                            </div>
-                        </div>
-                        <div class="single-testimonial item d-flex flex-row">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{% static 'img/elements/user1.png' %}" alt="">					
-                            </div>
-                            <div class="desc">
-                                <p>
-                                    Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills, the bigger the payoff you.		     
-                                </p>
-                                <h4>Harriet Maxwell</h4>
-                                <div class="star">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>				
-                                </div>	
-                            </div>
-                        </div>
-                        <div class="single-testimonial item d-flex flex-row">
-                            <div class="thumb">
-                                <img class="img-fluid" src="{% static 'img/elements/user2.png' %}" alt="">					
-                            </div>
-                            <div class="desc">
-                                <p>
-                                    A purpose is the eternal condition for success. Every former smoker can tell you just how hard it is to stop smoking cigarettes. However.
-                                </p>
-                                <h4>Carolyn Craig</h4>
-                                   <div class="star">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>			
-                                </div>	
-                            </div>
-                        </div>		                    		                    
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End testimonial Area -->
-
+        
         <!-- Start home-about Area -->
         <section class="home-about-area">
             <div class="container-fluid">
@@ -592,7 +358,7 @@
                                 <p>
                                     Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer.
                                 </p>
-                                <h6 class="date">31st January,2018</h6>
+                                <h6 class="date">31st January,2024</h6>
                             </div>	
                         </div>
                         <div class="single-recent-blog-post item">
@@ -614,7 +380,7 @@
                                 <p>
                                     Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer.
                                 </p>
-                                <h6 class="date">31st January,2018</h6>
+                                <h6 class="date">31st January,2024</h6>
                             </div>	
                         </div>
                         <div class="single-recent-blog-post item">
@@ -636,7 +402,7 @@
                                 <p>
                                     Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer.
                                 </p>
-                                <h6 class="date">31st January,2018</h6>
+                                <h6 class="date">31st January,2023</h6>
                             </div>	
                         </div>														
 

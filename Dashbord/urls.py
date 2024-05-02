@@ -8,5 +8,5 @@ urlpatterns = [
     path('login/',views.login,name="Dreamtravellogin" ),
     path('register/',views.registre,name="Dreamtravelregister" ),
     path('user-logout', views.user_logout,name='user-logout'),
-    path('page/', views.page, name='page'),
+    path('events/', views.events_page, name='events'),
 ]
