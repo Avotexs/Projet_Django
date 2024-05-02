@@ -1,0 +1,119 @@
+
+
+
+
+
+{% load static%}
+	
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Travel</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">				
+        <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">							
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">				
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        
+    </head>
+    <body>	
+        <header id="header">
+            <div class="header-top">
+                <div class="container">
+                  <div class="row align-items-center">
+                      <div class="col-lg-6 col-sm-6 col-6 header-top-left">
+                          <ul>
+                              <li><a href="#">Visit Us</a></li>
+                              <li><a href="#">Buy Tickets</a></li>
+                          </ul>			
+                      </div>
+                      <div class="col-lg-6 col-sm-6 col-6 header-top-right">
+                        <div class="header-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                      </div>
+                  </div>			  					
+                </div>
+            </div>
+            <div class="container main-menu">
+                <div class="row align-items-center justify-content-between d-flex">
+                  <div id="logo">
+                    <a href="{% url 'Dreamtravel' %}"><img src="{% static 'img/logo-DT.png' %}" alt="" title="" /></a>
+                  </div>
+                  <nav id="nav-menu-container">
+                    <ul class="nav-menu"> 
+                     <li><a href="{% url 'Dreamtravel' %}">Home</a></li>
+                     <li><a href="{% url 'Dreamtravelabout' %}">About</a></li>
+                    {% if user.is_authenticated %}
+                      <li><a href="{% url 'user-logout'%}">logout</a></li>
+                    {% else %}
+                      <li><a href="{% url 'Dreamtravelregister' %}">Registre</a></li>
+                      <li><a href="{% url 'Dreamtravellogin' %}">Login</a></li>
+                      <li class="menu-has-children"><a href="{% url 'page' %}">Profile</a>
+                    {% endif %}
+
+                      <li class="menu-has-children"><a href="http://localhost:3000/">ChatbotGemini</a>
+                      </li>					          					          		          
+                      <li><a href="https://m.me/312187555302646?ref=w24439850">Chatbotmessanger</a></li>
+                    </ul>
+                  </nav><!-- #nav-menu-container -->					      		  
+                </div>
+            </div>
+        </header><!-- #header -->
+        
+        <!-- start banner Area -->
+        <section class="banner-area relative">
+            <div class="overlay overlay-bg"></div>				
+            <div class="container">
+                <div class="row fullscreen align-items-center justify-content-between">
+                    <div class="col-lg-6 col-md-6 banner-left">
+                        <h6 class="text-white"></h6>
+                        <h1 class="text-white"> .</h1>
+                        <p class="text-white">
+                        </p>
+                        <a href="#" class="primary-btn text-uppercase"></a>
+                    </div>
+                    
+                </div>
+            </div>					
+        </section>
+        <!-- End banner Area -->
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="id_username">Username:</label><br>
+        {{ loginform.username }}
+        <br>
+        <label for="id_password">Password:</label><br>
+        {{ loginform.password }}
+        <br><br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

@@ -66,30 +66,20 @@
                     <a href="{% url 'Dreamtravel' %}"><img src="{% static 'img/logo-DT.png' %}" alt="" title="" /></a>
                   </div>
                   <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                      <li><a href="{% url 'Dreamtravel' %}">Home</a></li>
-                      <li><a href="{% url 'Dreamtravelabout' %}">About</a></li>
-                      <li><a href="packages.html">Packages</a></li>
-                      <li><a href="hotels.html">Hotels</a></li>
-                      <li><a href="insurance.html">Insurence</a></li>
-                      <li class="menu-has-children"><a href="">Blog</a>
-                        <ul>
-                          <li><a href="blog-home.html">Blog Home</a></li>
-                          <li><a href="blog-single.html">Blog Single</a></li>
-                        </ul>
-                      </li>	
-                      <li class="menu-has-children"><a href="">Pages</a>
-                        <ul>
-                              <li><a href="elements.html">Elements</a></li>
-                              <li class="menu-has-children"><a href="">Level 2 </a>
-                                <ul>
-                                  <li><a href="#">Item One</a></li>
-                                  <li><a href="#">Item Two</a></li>
-                                </ul>
-                              </li>					                		
-                        </ul>
+                    <ul class="nav-menu"> 
+                     <li><a href="{% url 'Dreamtravel' %}">Home</a></li>
+                     <li><a href="{% url 'Dreamtravelabout' %}">About</a></li>
+                    {% if user.is_authenticated %}
+                      <li><a href="{% url 'user-logout'%}">logout</a></li>
+                    {% else %}
+                      <li><a href="{% url 'Dreamtravelregister' %}">Registre</a></li>
+                      <li><a href="{% url 'Dreamtravellogin' %}">Login</a></li>
+                      <li class="menu-has-children"><a href="{% url 'page' %}">Profile</a>
+                    {% endif %}
+
+                      <li class="menu-has-children"><a href="http://localhost:3000/">ChatbotGemini</a>
                       </li>					          					          		          
-                      <li><a href="https://m.me/312187555302646?ref=w24439850">Chatbot</a></li>
+                      <li><a href="https://m.me/312187555302646?ref=w24439850">Chatbotmessanger</a></li>
                     </ul>
                   </nav><!-- #nav-menu-container -->					      		  
                 </div>
@@ -109,54 +99,7 @@
                         </p>
                         <a href="#" class="primary-btn text-uppercase">Get Started</a>
                     </div>
-                    <div class="col-lg-4 col-md-6 banner-right">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                          <li class="nav-item">
-                            <a class="nav-link active" id="flight-tab" data-toggle="tab" href="#flight" role="tab" aria-controls="flight" aria-selected="true">Flights</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="false">Hotels</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" id="holiday-tab" data-toggle="tab" href="#holiday" role="tab" aria-controls="holiday" aria-selected="false">Holidays</a>
-                          </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                          <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
-                            <form class="form-wrap">
-                                <input type="text" class="form-control" name="name" placeholder="From " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">									
-                                <input type="text" class="form-control" name="to" placeholder="To " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
-                                <input type="text" class="form-control date-picker" name="start" placeholder="Start " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Start '">
-                                <input type="text" class="form-control date-picker" name="return" placeholder="Return " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return '">
-                                <input type="number" min="1" max="20" class="form-control" name="adults" placeholder="Adults " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adults '">
-                                <input type="number" min="1" max="20" class="form-control" name="child" placeholder="Child " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Child '">							
-                                <a href="#" class="primary-btn text-uppercase">Search flights</a>									
-                            </form>
-                          </div>
-                          <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
-                            <form class="form-wrap">
-                                <input type="text" class="form-control" name="name" placeholder="From " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">									
-                                <input type="text" class="form-control" name="to" placeholder="To " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
-                                <input type="text" class="form-control date-picker" name="start" placeholder="Start " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Start '">
-                                <input type="text" class="form-control date-picker" name="return" placeholder="Return " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return '">
-                                <input type="number" min="1" max="20" class="form-control" name="adults" placeholder="Adults " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adults '">
-                                <input type="number" min="1" max="20" class="form-control" name="child" placeholder="Child " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Child '">						
-                                <a href="#" class="primary-btn text-uppercase">Search Hotels</a>									
-                            </form>							  	
-                          </div>
-                          <div class="tab-pane fade" id="holiday" role="tabpanel" aria-labelledby="holiday-tab">
-                            <form class="form-wrap">
-                                <input type="text" class="form-control" name="name" placeholder="From " onfocus="this.placeholder = ''" onblur="this.placeholder = 'From '">									
-                                <input type="text" class="form-control" name="to" placeholder="To " onfocus="this.placeholder = ''" onblur="this.placeholder = 'To '">
-                                <input type="text" class="form-control date-picker" name="start" placeholder="Start " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Start '">
-                                <input type="text" class="form-control date-picker" name="return" placeholder="Return " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return '">
-                                <input type="number" min="1" max="20" class="form-control" name="adults" placeholder="Adults " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adults '">
-                                <input type="number" min="1" max="20" class="form-control" name="child" placeholder="Child " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Child '">							
-                                <a href="#" class="primary-btn text-uppercase">Search Holidays</a>									
-                            </form>							  	
-                          </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>					
         </section>
